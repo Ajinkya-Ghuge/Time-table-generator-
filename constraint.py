@@ -27,7 +27,7 @@ FIXED = {
 }
 
 # Faculty weekly hours. 
-MAX_HOURS = 14
+MAX_HOURS = 15
 
 
 model = cp_model.CpModel()
