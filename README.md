@@ -1,105 +1,87 @@
-College Timetable Scheduling System
-This project is a Python-based timetable scheduling system designed to create conflict-free, fully populated timetables for a college, specifically for B.Tech CSE students in Years 2, 3, and 4. It uses the provided dataset to schedule classes while adhering to constraints and exports the results to an Excel file (College_Timetables.xlsx). The system ensures all lecture slots are filled without gaps by using a modified dataset that balances course hours and resources.
-Features
+# College Timetable Scheduling System
 
-Generates timetables for multiple divisions (e.g., Year2_DivA, Year3_DivB, Year4_DivA) across a 6-day week (Monday to Saturday).
-Schedules both theory and practical classes, respecting faculty, room, and student constraints.
-Exports timetables to an Excel file with separate sheets for each division.
-Handles central courses (shared across divisions) and individual division classes.
-Ensures no vacant lecture slots by allocating exactly enough course hours to fill the schedule.
+This Python-based project generates fully populated, conflict-free timetables for B.Tech CSE students in Years 2, 3, and 4. It schedules classes for multiple divisions, ensuring all lecture slots are filled while respecting faculty, room, and student constraints. The output is exported to an Excel file (`College_Timetables.xlsx`) with a separate sheet for each division.
 
-Prerequisites
+## Project Overview
+- **Purpose**: Creates weekly timetables for college divisions, scheduling theory and practical classes without gaps.
+- **Scope**: Covers Years 2 (Divisions A, B, C, D), 3 (A, B, C), and 4 (A, B), with courses like Data Structures, Operating Systems, and Machine Learning.
+- **Output**: Excel file with timetables, each showing 6 days (Monday–Saturday), 6 lecture slots/day, and fixed breaks (Lunch and Tea).
+- **Key Feature**: All slots are filled using a modified dataset with increased course hours (36 hours/year) and centralized scheduling.
 
-Python 3.6+
-Required Libraries:
-pandas: For data handling and Excel output.
-Install via: pip install pandas
+## Setup Instructions
+1. **Install Python**: Ensure Python 3.6+ is installed on your system.
+2. **Install Dependencies**:
+   ```bash
+   pip install pandas
+   ```
+   - `pandas`: Used for data handling and Excel output.
+3. **Prepare the Script**:
+   - Save the provided Python script as `timetable_scheduler.py`.
+   - Ensure it’s in a directory with write permissions to avoid errors when saving the Excel file.
+4. **Run the Script**:
+   ```bash
+   python timetable_scheduler.py
+   ```
+   - The script generates `College_Timetables.xlsx` in the same directory.
+   - Console output displays each timetable for review.
 
+## Dataset Description
+The system uses three datasets defined in the script:
+- **Courses**:
+  - Lists courses (e.g., Data Structures, Machine Learning) with details like year, divisions, hours (9 hours/course), and faculty.
+  - All courses are centralized (shared across divisions) with batch sizes of 120–240.
+- **Faculty**:
+  - Specifies faculty details (e.g., ID, expertise, max hours of 40/week).
+  - No unavailable slots; preferred slots (e.g., Wed-2 for OE - Environmental Studies) are included.
+- **Rooms**:
+  - Includes rooms with capacities (25–240) and types (theory, lab, computer_lab).
+  - Added large rooms (e.g., AUD2, LAB_BIG) to support big batches.
 
+## Scheduling Constraints
+The system follows these rules to ensure a valid, fully populated timetable:
+1. **Faculty Work Limits**: Each faculty can teach up to 40 hours/week and 6 slots/day to avoid overload.
+2. **Consecutive Teaching Limit**: Faculty can teach up to 6 consecutive slots/day to maintain reasonable schedules.
+3. **No Unavailable Slots**: Faculty have no restricted slots, maximizing scheduling flexibility.
+4. **Preferred Slots**: Courses with preferred slots (e.g., Sat-1 for MDM - Seminar) are scheduled there when possible.
+5. **Room Exclusivity**: No two classes can use the same room at the same time.
+6. **Room Capacity**: Rooms must fit the class size (e.g., 240-student classes use AUD2 or LAB_BIG).
+7. **Room Type Matching**: Theory classes use classrooms/auditoriums; practicals use labs.
+8. **No Student Conflicts**: Each division has only one class per time slot.
+9. **Fixed Breaks**: Lunch Break (12:15–13:15) and Tea Break (15:15–15:30) are reserved daily.
+10. **Centralized Courses**: Courses cover multiple divisions in one session (e.g., all Year 2 divisions attend Data Structures together).
+11. **Balanced Distribution**: Classes are spread across days, prioritizing less busy days for faculty.
 
-How to Run
+## How It Works
+- **Input Processing**: Reads course, faculty, and room data from the script’s datasets.
+- **Session Creation**: Generates sessions (theory/practical) based on course hours, grouping divisions for central courses.
+- **Scheduling Logic**: Assigns sessions to slots, respecting constraints, using large rooms for big batches, and prioritizing preferred slots.
+- **Output**: Fills all 36 lecture slots/week (6 days × 6 slots) with courses, adds breaks, and exports timetables to Excel.
+- **Error Handling**: Logs unschedulable sessions (none in this case due to sufficient hours and rooms).
 
-Clone the Repository:
-git clone <repository_url>
-cd <repository_directory>
+## Sample Output
+- **File**: `College_Timetables.xlsx`
+- **Sheets**: One per division (e.g., Year2_DivA, Year3_DivB, Year4_DivA).
+- **Format**: Rows (days: Mon–Sat), columns (slots: 10:15–17:30), entries like "Data Structures (theory) - F001 - AUD2".
+- **Example (Year 2, Monday)**: Data Structures (theory), Data Structures (practical), Lunch Break, Digital Logic Design (theory), Digital Logic Design (practical), Tea Break, Mathematics III (theory), Mathematics III (theory).
+- **Result**: No empty slots; all divisions in a year share identical schedules due to central courses.
 
+## Limitations and Future Improvements
+- **Current Limitations**:
+  - Fixed dataset requires manual updates for new courses or faculty.
+  - Assumes all courses are centralized, which may not suit all colleges.
+- **Suggested Enhancements**:
+  - Add a user interface for inputting data.
+  - Optimize for varied course distributions (e.g., fewer hours for some subjects).
+  - Integrate with a database for dynamic updates.
+  - Handle partial scheduling failures with fallback options.
 
-Install Dependencies:
-pip install pandas
+## Troubleshooting
+- **Permission Errors**: Ensure the script has write access to the output directory. Move it out of cloud folders (e.g., OneDrive) or run as administrator.
+- **Missing Modules**: Verify `pandas` is installed (`pip show pandas`). Install `openpyxl` if Excel errors occur (`pip install openpyxl`).
+- **Empty Slots**: If slots are empty (unlikely with this dataset), check course hours (must total 36/week/year) or reduce constraints.
 
+## License
+MIT License. See the [LICENSE](LICENSE) file for details.
 
-Run the Script:
-
-Ensure the Python script (timetable_scheduler.py) is in your working directory.
-Execute: python timetable_scheduler.py
-
-
-Output:
-
-The script generates College_Timetables.xlsx with timetables for each division.
-Console output shows a preview of each timetable.
-
-
-
-Dataset
-The system uses three main datasets defined in the script:
-
-Course Data: Details about courses (e.g., course ID, name, year, divisions, hours, faculty, room type, batch size).
-Modified to make all courses central, with each course set to 9 hours/week (total 36 hours/year) to fill all slots.
-
-
-Faculty Data: Information about teachers (e.g., ID, expertise, max hours, unavailable/preferred slots, consecutive limits).
-Adjusted to allow 40 max hours/week, no unavailable slots, and up to 6 consecutive hours.
-
-
-Room Data: Room details (e.g., ID, capacity, type).
-Added large-capacity rooms (e.g., AUD2, AUD3, LAB_BIG) to handle big batches (120-240 students).
-
-
-
-Constraints Followed
-The scheduling algorithm adheres to the following rules to ensure a valid timetable:
-
-Faculty Work Limits: Each faculty has a maximum weekly teaching limit (40 hours) and a daily limit (6 slots).
-No Back-to-Back Overload: Faculty can teach up to 6 consecutive slots per day to avoid exhaustion.
-Faculty Unavailable Times: No classes are scheduled during a faculty’s unavailable slots (set to none in this version).
-Preferred Times: Courses or faculty with preferred slots (e.g., Wed-2 for OE - Environmental Studies) are prioritized for those times.
-Room Availability: No two classes can use the same room simultaneously.
-Room Size Fit: Rooms must have enough capacity for the class’s batch size (e.g., 240-student classes use AUD2 or LAB_BIG).
-Room Type Match: Theory classes use classrooms/auditoriums; practical classes use labs.
-No Student Overlaps: A division cannot have multiple classes in the same time slot.
-Fixed Breaks: Lunch (12:15-13:15) and tea break (15:15-15:30) are reserved daily.
-Central Course Sharing: Central courses are scheduled once for multiple divisions in a large room.
-Even Distribution: Classes are spread across days, prioritizing less busy days for faculty.
-
-Output
-
-Excel File: College_Timetables.xlsx contains a sheet for each division (e.g., Year2_DivA, Year3_DivB).
-Timetable Structure: Each sheet covers Monday to Saturday, with 6 lecture slots/day plus breaks. Entries include course name, type (theory/practical), faculty ID, and room ID (e.g., "Data Structures (theory) - F001 - AUD2").
-No Vacancies: All lecture slots are filled, with central courses ensuring efficient use of time and resources.
-
-Example Output
-For Year 2 (Divisions A, B, C, D):
-
-Identical schedules due to central courses.
-Example (Monday): Data Structures (theory), Data Structures (practical), Lunch Break, Digital Logic Design (theory), Digital Logic Design (practical), Tea Break, Mathematics III (theory), Mathematics III (theory).
-Uses large rooms (AUD2, LAB_BIG) to accommodate 240 students.
-
-Notes
-
-The dataset was modified to ensure full slot coverage (36 hours/week per year, all central courses, more large rooms).
-
-
- If a session cannot be scheduled (e.g., due to room or faculty conflicts), it is logged in the console but does not affect the final timetable due to sufficient hours.
-
-
-For production use, consider adding:
-Optimization for balanced subject distribution.
-User interface for input/output.
-Database integration for dynamic data.
-Handling of edge cases (e.g., partial scheduling failures).
-
-
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Contact
+For issues or suggestions, please open an issue on the repository or contact the developer.
