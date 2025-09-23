@@ -39,17 +39,18 @@ The system uses three datasets defined in the script:
 
 ## Scheduling Constraints
 The system follows these rules to ensure a valid, fully populated timetable:
-1. **Faculty Work Limits**: Each faculty can teach up to 40 hours/week and 6 slots/day to avoid overload.
-2. **Consecutive Teaching Limit**: Faculty can teach up to 6 consecutive slots/day to maintain reasonable schedules.
-3. **No Unavailable Slots**: Faculty have no restricted slots, maximizing scheduling flexibility.
-4. **Preferred Slots**: Courses with preferred slots (e.g., Sat-1 for MDM - Seminar) are scheduled there when possible.
-5. **Room Exclusivity**: No two classes can use the same room at the same time.
-6. **Room Capacity**: Rooms must fit the class size (e.g., 240-student classes use AUD2 or LAB_BIG).
-7. **Room Type Matching**: Theory classes use classrooms/auditoriums; practicals use labs.
-8. **No Student Conflicts**: Each division has only one class per time slot.
-9. **Fixed Breaks**: Lunch Break (12:15–13:15) and Tea Break (15:15–15:30) are reserved daily.
-10. **Centralized Courses**: Courses cover multiple divisions in one session (e.g., all Year 2 divisions attend Data Structures together).
-11. **Balanced Distribution**: Classes are spread across days, prioritizing less busy days for faculty.
+1. **Faculty Work Limits**: Each faculty can teach up to 40 hours per week and no more than 6 slots per day to prevent overworking.
+2. **Consecutive Teaching Limit**: Faculty can teach up to 6 consecutive slots per day to maintain reasonable schedules and avoid exhaustion.
+3. **No Unavailable Slots**: Faculty have no restricted time slots, allowing maximum flexibility for scheduling classes.
+4. **Preferred Slots**: Courses with preferred time slots (e.g., Sat-1 for MDM - Seminar, Wed-2 for OE - Environmental Studies) are prioritized for those slots when possible.
+5. **Room Exclusivity**: No two classes can be scheduled in the same room at the same time, ensuring rooms are booked only when free
+6. **Room Capacity**: Rooms must have enough seats for the class size (e.g., 240-student classes require large rooms like AUD2 or LAB_BIG).
+7. **Room Type Matching**: Theory classes are assigned to classrooms or auditoriums, while practical classes are assigned to labs, with no mismatches.
+8. **No Student Conflicts**: Each division (student group) can have only one class per time slot, preventing overlaps in their schedules.
+9. **Fixed Breaks**: Lunch Break (12:15–13:15) and Tea Break (15:15–15:30) are reserved daily, with no classes scheduled during these times.
+10. **Centralized Courses**: Central courses (e.g., Data Structures for all Year 2 divisions) are scheduled once for multiple divisions in a single session, using large rooms to save time and resources.
+11. **Balanced Distribution**: Classes are spread evenly across days, prioritizing slots on less busy days for faculty to balance their workload.
+
 
 ## How It Works
 - **Input Processing**: Reads course, faculty, and room data from the script’s datasets.
