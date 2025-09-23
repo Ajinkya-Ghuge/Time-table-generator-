@@ -1,0 +1,13 @@
+Day,Slot,Time,Room,Course,Teacher
+Mon,HM,09:00-10:15,R2,Database Systems,T2
+Mon,S1,10:15-11:15,R1,Database Systems,T2
+Mon,S2,11:15-12:15,R1,Machine Learning,T4
+Mon,S5,03:15-04:15,R2,Machine Learning,T4
+Tue,HM,09:00-10:15,R1,Machine Learning,T4
+Tue,S2,11:15-12:15,R1,Operating Systems,T3
+Wed,S2,11:15-12:15,R2,Operating Systems,T3
+Wed,Lunch,12:15-01:15,R1,Operating Systems,T3
+Wed,S5,03:15-04:15,R2,Data Structures,T1
+Thu,S1,10:15-11:15,R2,Data Structures,T1
+Thu,S5,03:15-04:15,R2,Data Structures,T1
+Fri,S5,03:15-04:15,R2,Database Systems,T2
