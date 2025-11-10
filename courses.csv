@@ -1,0 +1,25 @@
+course_id,name,program,year,divisions,credit,hours_per_week,theory_hours,practical_hours,lab_required,room_type,central,faculty_id,batch_size,preferred_slot
+201,Data Structures,B.Tech CSE,2,"A,B,C",5,5,3,2,Yes,Lab,No,F001,60,
+202,Digital Logic Design,B.Tech CSE,2,"A,B,C",5,5,3,2,Yes,Lab,No,F002,60,
+203,Mathematics III,B.Tech CSE,2,"A,B,C",4,4,4,0,No,Classroom,No,F003,60,
+204,Computer Organization,B.Tech CSE,2,"A,B,C",5,5,3,2,Yes,Lab,No,F013,60,
+205,Programming in Java,B.Tech CSE,2,"A,B,C",5,5,3,2,Yes,Lab,No,F014,60,
+206,Discrete Mathematics,B.Tech CSE,2,"A,B,C",4,4,4,0,No,Classroom,No,F015,60,
+207,OE - Environmental Studies (NEP),B.Tech CSE,2,"A,B,C",4,4,4,0,No,Classroom,Yes,F010,180,Wed-2
+208,Communication Skills (NEP),B.Tech CSE,2,"A,B,C",4,4,4,0,No,Classroom,Yes,F016,180,
+301,Operating Systems,B.Tech CSE,3,"A,B,C",5,5,3,2,Yes,Lab,No,F004,60,
+302,Database Systems,B.Tech CSE,3,"A,B,C",5,5,3,2,Yes,Lab,No,F005,60,
+303,Computer Networks,B.Tech CSE,3,"A,B,C",5,5,3,2,Yes,Lab,No,F006,60,
+304,Software Engineering,B.Tech CSE,3,"A,B,C",5,5,3,2,Yes,Lab,No,F017,60,
+305,Algorithms,B.Tech CSE,3,"A,B,C",4,4,4,0,No,Classroom,No,F018,60,
+306,Web Development,B.Tech CSE,3,"A,B,C",5,5,3,2,Yes,Lab,No,F019,60,
+307,OE - Constitution of India (NEP),B.Tech CSE,3,"A,B,C",4,4,4,0,No,Classroom,Yes,F011,180,Thu-3
+308,Probability and Statistics (NEP),B.Tech CSE,3,"A,B,C",4,4,4,0,No,Classroom,Yes,F020,180,
+401,Machine Learning,B.Tech CSE,4,"A,B,C",5,5,3,2,Yes,Lab,No,F007,60,
+402,Cloud Computing,B.Tech CSE,4,"A,B,C",5,5,3,2,Yes,Lab,No,F008,60,
+403,Major Project,B.Tech CSE,4,"A,B,C",8,8,0,8,Yes,Lab,No,F009,60,"Fri-2,3"
+404,Artificial Intelligence,B.Tech CSE,4,"A,B,C",5,5,3,2,Yes,Lab,No,F021,60,
+405,Big Data Analytics,B.Tech CSE,4,"A,B,C",5,5,3,2,Yes,Lab,No,F022,60,
+406,Cyber Security,B.Tech CSE,4,"A,B,C",4,4,4,0,No,Classroom,No,F023,60,
+407,MDM - Seminar (NEP),B.Tech CSE,4,"A,B,C",4,4,4,0,No,Seminar,Yes,F012,180,Sat-1
+408,Multi Disciplinary Minor (NEP),B.Tech CSE,4,"A,B,C",4,4,4,0,No,Classroom,Yes,F024,180,

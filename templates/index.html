@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plannable.ai - AI-Powered Timetable Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <div class="d-flex align-items-center">
+                    <div class="logo-icon bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                        <i class="bi bi-calendar-check text-white"></i>
+                    </div>
+                    Plannable.ai
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/upload">Generate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/demo">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row align-items-center min-vh-50 py-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4 text-dark">One Tool To Manage <span class="ajinkya">Timetable</span> And your Institution</h1>
+                    <p class="lead text-muted mb-5">Deliver high-quality scheduling solutions to your team. Automate the most complex timetable generation with AI-powered optimization.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="/upload" class="btn btn-primary btn-lg px-4 py-3 fw-semibold">
+                            <i class="bi bi-lightning-charge me-2"></i>Generate Timetable
+                        </a>
+                        <a href="/demo" class="btn btn-outline-secondary btn-lg px-4 py-3 fw-semibold">
+                            <i class="bi bi-play-circle me-2"></i>View Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image mt-5 mt-lg-0">
+                        <div class="card border-0 shadow-lg">
+                            <div class="card-body p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5 class="card-title mb-0 fw-bold">Generated Timetable</h5>
+                                    <span class="badge bg-success">Live</span>
+                                </div>
+                                <div class="timetable-preview">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Time/Day</th>
+                                                <th>Mon</th>
+                                                <th>Tue</th>
+                                                <th>Wed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-semibold">10:15-11:15</td>
+                                                <td class="bg-primary text-white">Data Structures</td>
+                                                <td class="bg-success text-white">Mathematics</td>
+                                                <td class="bg-info text-white">Physics Lab</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-semibold">11:15-12:15</td>
+                                                <td class="bg-primary text-white">Data Structures</td>
+                                                <td class="bg-warning text-dark">Digital Circuits</td>
+                                                <td class="bg-info text-white">Physics Lab</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-semibold text-muted">12:15-1:15</td>
+                                                <td colspan="3" class="text-center text-muted bg-light">Lunch Break</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Smart Timetable Management</h2>
+                    <p class="lead text-muted">Leverage advanced technologies to ensure everything you need for perfect scheduling</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-cpu fs-4 text-white"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">AI-Powered Scheduling</h4>
+                            <p class="text-muted">Advanced algorithms that handle complex constraints and optimize for the best possible timetable layout.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-shield-check fs-4 text-white"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Zero Conflicts</h4>
+                            <p class="text-muted">Automatically detect and prevent scheduling conflicts between faculty, rooms, and student groups.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="feature-icon bg-info rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                <i class="bi bi-lightning fs-4 text-white"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Instant Generation</h4>
+                            <p class="text-muted">Generate complete timetables in seconds instead of weeks. Make changes instantly when needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5 bg-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 text-center">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold text-primary mb-2">60s</h3>
+                        <p class="text-muted fw-semibold">Generation Time</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold text-success mb-2">100%</h3>
+                        <p class="text-muted fw-semibold">Conflict Free</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold text-info mb-2">24/7</h3>
+                        <p class="text-muted fw-semibold">Available</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="stat-card">
+                        <h3 class="display-4 fw-bold text-warning mb-2">99.8%</h3>
+                        <p class="text-muted fw-semibold">Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">Ready to transform your scheduling?</h2>
+                    <p class="lead mb-4">Join institutions using Plannable.ai to streamline their timetable management process</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="/upload" class="btn btn-primary btn-lg px-5 py-3 fw-semibold">
+                            <i class="bi bi-cloud-upload me-2"></i>Upload & Generate
+                        </a>
+                        <a href="/demo" class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
+                            <i class="bi bi-eye me-2"></i>See Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div class="logo-icon bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                            <i class="bi bi-calendar-check text-white"></i>
+                        </div>
+                        <h5 class="fw-bold mb-0">Plannable.ai</h5>
+                    </div>
+                    <p class="text-muted mt-2 mb-0">AI-Powered Timetable Generator</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-muted me-3 fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-muted me-3 fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2025 Plannable.ai. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

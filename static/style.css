@@ -1,0 +1,305 @@
+/* Custom Styles for Plannable.ai - Modern Design */
+:root {
+    --primary-color: #2c5aa0;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.logo-icon {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-icon {
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+/* Timetable Preview */
+.timetable-preview .table {
+    font-size: 0.875rem;
+}
+
+.timetable-preview th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.timetable-preview td {
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Stats Section */
+.stat-card {
+    padding: 1rem;
+}
+
+.display-4 {
+    font-size: 3rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #1e3a8a);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #157347);
+    border: none;
+}
+
+.btn-outline-secondary {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section {
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .stat-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Fix for timetable on mobile */
+    .timetable-table {
+        font-size: 0.75rem;
+    }
+    
+    .timetable-table th,
+    .timetable-table td {
+        padding: 0.25rem;
+        word-break: break-word;
+    }
+    
+    /* Fix header spacing on mobile */
+    .timetable-section,
+    .upload-section,
+    .generate-section {
+        padding-top: 80px !important;
+    }
+    
+    /* Fix button layout on mobile */
+    .d-flex.gap-2 {
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+    
+    .d-flex.gap-2 .btn {
+        width: 100%;
+    }
+    
+    /* Fix tab navigation on mobile */
+    .nav-tabs .nav-link {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    /* Fix form layout on mobile */
+    .upload-form .form-control-lg {
+        font-size: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section .row {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Badges */
+.badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Social Links */
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff !important;
+}
+
+/* Section Spacing */
+section {
+    padding: 4rem 0;
+}
+
+/* Text Colors */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Background Colors */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.text-center {
+    text-align: center !important;
+    padding: 30px;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, rgb(47 4 255 / 13%) 0%, #ffffff 100%);
+}
+
+/* Add floating animation to hero card */
+.hero-image .card {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.ajinkya {
+    color: rgb(0 94 255);
+    font-weight: bold;
+}
+
+/* Timetable specific styles */
+.timetable-table {
+    font-size: 0.875rem;
+}
+
+.timetable-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.break-slot {
+    background-color: #fff3cd !important;
+    font-weight: 500;
+}
+
+.theory-slot {
+    background-color: #d1ecf1 !important;
+}
+
+.practical-slot {
+    background-color: #d4edda !important;
+}
+
+/* Fix for horizontal scrolling on mobile */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure content doesn't get cut off */
+.container {
+    overflow-x: hidden;
+}
+
+/* Upload page specific styles */
+.upload-form .form-label {
+    font-weight: 600;
+}
+
+.upload-form .text-muted.small {
+    font-size: 0.8rem;
+}
+
+
+
+@media (min-width: 768px) {
+    .align-items-md-center {
+        align-items: center !important;
+        height: 253px;
+    }
+}

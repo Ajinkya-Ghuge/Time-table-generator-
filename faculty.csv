@@ -1,0 +1,25 @@
+faculty_id,name,expertise,max_hours_per_week,unavailable_slots,preferred_slots,consecutive_limit
+F001,Dr. A. Sharma,[201] (Data Structures),40,[],[Mon-2],6
+F002,Prof. B. Patil,[202] (Digital Logic Design),40,[],[],6
+F003,Dr. C. Mehta,[203] (Mathematics III),40,[],[Tue-2],6
+F004,Prof. D. Kulkarni,[301] (Operating Systems),40,[],[],6
+F005,Dr. E. Iyer,[302] (Database Systems),40,[],[Fri-3],6
+F006,Dr. F. Singh,[303] (Computer Networks),40,[],[],6
+F007,Prof. G. Deshmukh,[401] (Machine Learning),40,[],[Wed-1],6
+F008,Dr. H. Verma,[402] (Cloud Computing),40,[],[],6
+F009,Prof. I. Rao,[403] (Major Project),40,[],"[Fri-2, Fri-3]",6
+F010,Dr. J. Joshi,[207] (OE - Environmental Studies (NEP)),40,[],[Wed-2],6
+F011,Prof. K. Banerjee,[307] (OE - Constitution of India (NEP)),40,[],[Thu-3],6
+F012,Dr. L. Reddy,[407] (MDM - Seminar (NEP)),40,[],[Sat-1],6
+F013,Dr. M. Khan,[204] (Computer Organization),40,[],[],6
+F014,Prof. N. Singh,[205] (Programming in Java),40,[],[],6
+F015,Dr. O. Patel,[206] (Discrete Mathematics),40,[],[],6
+F016,Prof. P. Lee,[208] (Communication Skills (NEP)),40,[],[],6
+F017,Dr. Q. Gomez,[304] (Software Engineering),40,[],[],6
+F018,Prof. R. Kim,[305] (Algorithms),40,[],[],6
+F019,Dr. S. Wong,[306] (Web Development),40,[],[],6
+F020,Prof. T. Chen,[308] (Probability and Statistics (NEP)),40,[],[],6
+F021,Dr. U. Lopez,[404] (Artificial Intelligence),40,[],[],6
+F022,Prof. V. Garcia,[405] (Big Data Analytics),40,[],[],6
+F023,Dr. W. Martinez,[406] (Cyber Security),40,[],[],6
+F024,Prof. X. Rodriguez,[408] (Multi Disciplinary Minor (NEP)),40,[],[],6
